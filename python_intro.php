@@ -20,7 +20,7 @@ else{
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Notifications</title>
+	<title>NEEV : PYTHON INTRODUCTION</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -59,6 +59,16 @@ else{
 }
 		</style>
 
+<style>
+.responsive {
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+</style>
+
 
 </head>
 
@@ -70,27 +80,23 @@ else{
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="page-title">Notifications</h3>
+						<h3 class="page-title">INTRODUCTION TO PYTHON......</h3>
 						<div class="row">
 							<div class="col-md-12">
 								<div class="panel panel-default">
-									<div class="panel-heading">Notification</div>
+									<div class="panel-heading">Introduction</div>
 									   <div class="panel-body">
-<?php 
-$reciver = $_SESSION['alogin'];
-$sql = "SELECT * from  notification where notireciver = (:reciver) order by time DESC";
-$query = $dbh -> prepare($sql);
-$query-> bindParam(':reciver', $reciver, PDO::PARAM_STR);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{				?>	
-        <h5 style="background:#ededed;padding:20px;"><i class="fa fa-bell text-primary"></i>&nbsp;&nbsp;<b class="text-primary"><?php echo htmlentities($result->time);?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo htmlentities($result->notiuser);?> -----> <?php echo htmlentities($result->notitype);?></h5>
-                       <?php $cnt=$cnt+1; }} ?>
-                                        </div>
+
+									   	<br>
+									   	<img style="text-align: center; align-items: center;" class="responsive" src="./img/python.png">
+
+									   	<p style="font-size: 20px; color: black;">Python is an interpreted, high-level and general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace. Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects.<br><br>
+									   	Python is dynamically typed and garbage-collected. It supports multiple programming paradigms, including structured (particularly, procedural), object-oriented, and functional programming. Python is often described as a "batteries included" language due to its comprehensive standard library.</p>
+
+
+									   	<br><br>
+									   	<iframe height="400px" width="100%" src="https://repl.it/@Mkkaushik/JoyfulKindCore?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+                                       </div>
                                     </div>
                                 </div>
                             </div>

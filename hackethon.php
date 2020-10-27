@@ -20,7 +20,7 @@ else{
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Notifications</title>
+	<title>Hackethon</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -59,6 +59,16 @@ else{
 }
 		</style>
 
+<style>
+.responsive {
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+</style>
+
 
 </head>
 
@@ -70,27 +80,59 @@ else{
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="page-title">Notifications</h3>
+						<h3 class="page-title">HACKETHON 1.0</h3>
 						<div class="row">
 							<div class="col-md-12">
 								<div class="panel panel-default">
-									<div class="panel-heading">Notification</div>
+									<div class="panel-heading">HACKETHON 1.0</div>
 									   <div class="panel-body">
-<?php 
-$reciver = $_SESSION['alogin'];
-$sql = "SELECT * from  notification where notireciver = (:reciver) order by time DESC";
-$query = $dbh -> prepare($sql);
-$query-> bindParam(':reciver', $reciver, PDO::PARAM_STR);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{				?>	
-        <h5 style="background:#ededed;padding:20px;"><i class="fa fa-bell text-primary"></i>&nbsp;&nbsp;<b class="text-primary"><?php echo htmlentities($result->time);?></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo htmlentities($result->notiuser);?> -----> <?php echo htmlentities($result->notitype);?></h5>
-                       <?php $cnt=$cnt+1; }} ?>
-                                        </div>
+
+<br><br><br>
+<p id="demo">
+	HACKETHON 1.0 COUNTDOWN....
+</p>
+
+<style>
+p {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 0px;
+}
+</style>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Dec 01, 2020 00:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s "+"";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "WELCOME TO HACKETHON 1.0";
+  }
+}, 1000);
+</script>
+
+									   	
+                                       </div>
                                     </div>
                                 </div>
                             </div>
